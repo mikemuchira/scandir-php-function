@@ -1,0 +1,16 @@
+<?php
+	$dir_path = "starkdir";
+		// where $dir_path is the path to directory you want to scan
+	if (is_dir($dir_path)) {
+		$files = scandir($dir_path);
+			//saves all files in the directory into an array
+			//to see the array, type the code below
+			//print_r($files);
+		for ($i=0; $i < count($files); $i++) { 
+			if ($files[$i] != '.' && $files[$i] != '..') {
+				echo "File $i -> $files[$i] <br>";
+			}
+		}
+	}else{
+		echo "Directory not found";
+	}
